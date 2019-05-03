@@ -7,6 +7,11 @@
     </div>
 
     <div class="auth_user">
-        <a href="">Войти</a>
+        {% if user.is_authenticated %}
+            <p>Привет, <a class='username' href=''>{{user.username}}</a></p>
+            <a class='btn_auth' href="">Выйти</a>
+        {% else %}
+            <a class='btn_auth' href="">Войти</a>
+        {% endif %}
     </div>
 </div>

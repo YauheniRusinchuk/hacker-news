@@ -29,15 +29,27 @@
     font-weight: bold;
 }
 
-.header_container .auth_user {
+.header_container .auth_user  {
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.header_container .auth_user a {
-    margin-right: 50px;
+.header_container .auth_user p {
+    font-size: 12px;
+}
+
+.header_container .auth_user .username {
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+    text-decoration: none;
+}
+
+
+.header_container .auth_user .btn_auth {
+    margin: 50px;
     font-size: 10px;
     text-decoration: none;
     color: #292828;
