@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header_container {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #e6e6e6;
+    display: flex;
+}
+
+.header_container .header_menu {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_container .header_menu a {
+    font-size: 10px;
+    text-decoration: none;
+    color: #292828;
+    font-weight: bold;
+}
+
+
+
+.main_container {
+    margin: 60px auto;
+    border: 1px solid black;
+}
