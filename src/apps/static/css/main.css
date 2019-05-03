@@ -29,6 +29,20 @@
     font-weight: bold;
 }
 
+.header_container .auth_user {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header_container .auth_user a {
+    margin-right: 50px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #292828;
+    font-weight: bold;
+}
 
 
 .main_container {
