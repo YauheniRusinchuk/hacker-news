@@ -3,6 +3,13 @@
 
 {% block content %}
 
-    <h1>HOME PAGE</h1>
+    <div class="all_posts">
+        {% for post in object_list %}
+            <div class='post_item'>
+                <a href="">{{post.title}}</a>
+                <p> Создал : <a href="">{{post.author}}</a></p>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

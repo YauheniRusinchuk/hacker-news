@@ -1,13 +1,15 @@
 from django.contrib.auth.models import User
-from django.views.generic import TemplateView
+from django.views.generic.list import ListView
 from django.views import View
 from django.shortcuts import render, redirect
 from src.forms.auth.forms import LoginForm, RegisterForm
 from django.contrib.auth.models import User
+from src.models.post.models import Post
 from django.contrib.auth import authenticate, login
 
 
-class HomeView(TemplateView):
+class HomeView(ListView):
+    queryset      = Post.objects.all()
     template_name = 'home/home.html'
 
 
