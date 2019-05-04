@@ -83,8 +83,38 @@
 
 
 
+.register_container {
+    width: 100%;
+    text-align: center;
+    margin: 100px auto;
+}
+
+.register_container form input[type='password'], input[type='text'] {
+    border: 2px solid grey;
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin: 10px;
+    outline: none;
+}
+
+.register_container form input[type='submit'] {
+    background-color: white;
+    color: #292828;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    outline: none;
+    padding: 3px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 
+.btn_register {
+    margin-top: 50px;
+    text-decoration: none;
+    color: grey;
+    font-size: 10px;
+}
 
 .main_container {
     margin: 60px auto;

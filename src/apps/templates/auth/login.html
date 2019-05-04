@@ -5,11 +5,14 @@
 
 
     <div class='login_container'>
-
+        <h4>Войти</h4>
         <form class="" method="post">{% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Войти">
         </form>
+
+
+        <a class='btn_register' href="{% url 'home:register_page' %}">Регистрация</a>
     </div>
 
 {% endblock %}
