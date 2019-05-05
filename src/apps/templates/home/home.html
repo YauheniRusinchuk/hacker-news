@@ -6,6 +6,9 @@
     <div class="all_posts">
         {% for post in object_list %}
             <div class='post_item'>
+                <div class="count_like">
+                    <span>{{post.like.count}}</span>
+                </div>
                 <a href="">{{post.title}}</a>
                 <p> Создал : <a href="">{{post.author}}</a></p>
             </div>
