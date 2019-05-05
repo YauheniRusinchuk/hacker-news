@@ -5,11 +5,12 @@ from django.shortcuts import render, redirect
 from src.forms.auth.forms import LoginForm, RegisterForm
 from django.contrib.auth.models import User
 from src.models.post.models import Post
+from django.db.models import Count
 from django.contrib.auth import authenticate, login
 
 
 class HomeView(ListView):
-    queryset      = Post.objects.all()
+    queryset      = Post.objects.annotate(q_count=Count('like')).order_by('-q_count')
     template_name = 'home/home.html'
 
 
