@@ -153,6 +153,10 @@
 .count_like {
     position: absolute;
     left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .count_like span {

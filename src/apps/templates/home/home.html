@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
@@ -8,6 +9,15 @@
             <div class='post_item'>
                 <div class="count_like">
                     <span>{{post.like.count}}</span>
+                    {% if user in post.like.all %}
+                        <a href="">
+                            <img src="{% static 'assets/down-arrow.png' %}" alt="">
+                        </a>
+                    {% else %}
+                        <a href="">
+                            <img src="{% static 'assets/up-arrow.png' %}" alt="">
+                        </a>
+                    {% endif %}
                 </div>
                 <a href="">{{post.title}}</a>
                 <p> Создал : <a href="">{{post.author}}</a></p>
