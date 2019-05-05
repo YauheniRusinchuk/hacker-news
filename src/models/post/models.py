@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.contrib.auth.models import User
 
 
@@ -11,6 +12,10 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-create_time']
+
+
+    def get_absolute_url(self):
+        return reverse('home:detail_page', kwargs={'pk': self.pk})
 
 
     def __str__(self):

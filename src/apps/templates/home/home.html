@@ -21,7 +21,7 @@
                         {% endif %}
                     {% endif %}
                 </div>
-                <a href="">{{post.title}}</a>
+                <a href="{{post.get_absolute_url}}">{{post.title}}</a>
                 <p> Создал : <a href="">{{post.author}}</a></p>
             </div>
         {% endfor %}

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.views import View
 from django.shortcuts import render, redirect
 from src.forms.auth.forms import LoginForm, RegisterForm
@@ -10,9 +11,14 @@ from django.contrib.auth import authenticate, login
 
 
 
+class DetailView(DetailView):
+    model           = Post
+    template_name   = 'home/detail.html'
+
+
 class NewView(ListView):
     queryset        = Post.objects.all()
-    template_name   = 'home/home.html' 
+    template_name   = 'home/home.html'
 
 
 class HomeView(ListView):
