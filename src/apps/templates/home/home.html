@@ -9,14 +9,16 @@
             <div class='post_item'>
                 <div class="count_like">
                     <span>{{post.like.count}}</span>
-                    {% if user in post.like.all %}
-                        <a href="">
-                            <img src="{% static 'assets/down-arrow.png' %}" alt="">
-                        </a>
-                    {% else %}
-                        <a href="">
-                            <img src="{% static 'assets/up-arrow.png' %}" alt="">
-                        </a>
+                    {% if user.is_authenticated %}
+                        {% if user in post.like.all %}
+                            <a href="">
+                                <img src="{% static 'assets/down-arrow.png' %}" alt="">
+                            </a>
+                        {% else %}
+                            <a href="">
+                                <img src="{% static 'assets/up-arrow.png' %}" alt="">
+                            </a>
+                        {% endif %}
                     {% endif %}
                 </div>
                 <a href="">{{post.title}}</a>
