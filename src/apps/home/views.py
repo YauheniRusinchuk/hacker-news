@@ -9,6 +9,12 @@ from django.db.models import Count
 from django.contrib.auth import authenticate, login
 
 
+
+class NewView(ListView):
+    queryset        = Post.objects.all()
+    template_name   = 'home/home.html' 
+
+
 class HomeView(ListView):
     queryset      = Post.objects.annotate(q_count=Count('like')).order_by('-q_count')
     template_name = 'home/home.html'
