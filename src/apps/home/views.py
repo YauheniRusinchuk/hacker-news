@@ -2,7 +2,8 @@ from django.contrib.auth.models import User
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from django.views import View
 from django.shortcuts import render, redirect
 from src.forms.auth.forms import LoginForm, RegisterForm
@@ -11,6 +12,21 @@ from src.models.post.models import Post
 from django.db.models import Count
 from django.contrib.auth import authenticate, login
 from django.http import Http404
+
+
+
+
+class DeletePost(DeleteView):
+    model                   = Post
+    template_name           = 'home/delete.html'
+    success_url             = reverse_lazy('home:home_page')
+
+
+    def get_object(self, queryset=None):
+        obj = super(DeletePost, self).get_object(queryset=queryset)
+        if obj.author != self.request.user:
+            raise Http404
+        return obj
 
 
 
