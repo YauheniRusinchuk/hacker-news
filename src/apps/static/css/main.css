@@ -170,3 +170,31 @@
     text-align: center;
     padding: 10px;
 }
+
+.create_container {
+    width: 100%;
+    text-align: center;
+}
+
+.create_container label {
+    display: none;
+}
+
+.create_container form textarea {
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+}
+
+.create_container form button {
+    padding: 3px 20px;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    background-color: white;
+    color: #292828;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
