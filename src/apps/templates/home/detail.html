@@ -3,6 +3,9 @@
 {% block content %}
 
     <div class="detail_container">
+        {% if object.author == user %}
+            <a href="{% url 'home:update_page' pk=object.pk %}">обновить</a>
+        {% endif %}
         <h4>{{object.title}}</h4>
         <p>{{object.text}}</p>
     </div>

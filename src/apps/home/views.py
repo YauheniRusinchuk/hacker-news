@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views import View
 from django.shortcuts import render, redirect
 from src.forms.auth.forms import LoginForm, RegisterForm
@@ -10,6 +10,21 @@ from django.contrib.auth.models import User
 from src.models.post.models import Post
 from django.db.models import Count
 from django.contrib.auth import authenticate, login
+from django.http import Http404
+
+
+
+class UpdateView(LoginRequiredMixin, UpdateView):
+    model           = Post
+    fields          = ['title', 'text']
+    template_name   = 'home/update.html'
+
+
+    def get_object(self, queryset=None):
+        obj = super(UpdateView, self).get_object(queryset=queryset)
+        if obj.author != self.request.user:
+            raise Http404
+        return obj
 
 
 
